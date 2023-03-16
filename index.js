@@ -305,8 +305,10 @@ const server = new ApolloServer({
 	resolvers,
 });
 
+const port = Number.parseInt(process.env.PORT) || 4001;
+
 const { url } = await startStandaloneServer(server, {
-	listen: { port: 4001 },
+	listen: { port: port },
 });
 
 console.log(`🚀 Server listening at: ${url}`);
